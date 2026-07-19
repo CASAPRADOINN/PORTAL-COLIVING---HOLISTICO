@@ -1,52 +1,18 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTAL | Coliving - Holístico</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f7fafc; }
-        .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-        .gallery-item { height: 200px; overflow: hidden; border-radius: 8px; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-    </style>
 </head>
-<body class="p-4 sm:p-8">
-    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-        <!-- Logo y Título -->
-        <div class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-blue-900">PORTAL</h1>
-            <p class="text-gray-600 italic">Coliving - Holístico</p>
-        </div>
-
-        <!-- Foto de Portada -->
-        <div class="w-full h-64 sm:h-96 rounded-xl overflow-hidden shadow-md mb-8">
-            <img src="casa.jpg" alt="Fachada PORTAL" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Galería de Fotos -->
-        <h2 class="text-2xl font-semibold mb-4">Nuestros Espacios</h2>
-        <div class="gallery-container mb-8">
-            <div class="gallery-item"><img src="casa.jpg" alt="Espacio 1"></div>
-            <!-- Puedes añadir más fotos aquí simplemente copiando la línea de arriba -->
-        </div>
-
-        <!-- Mapa -->
-        <h2 class="text-2xl font-semibold mb-4">Ubicación</h2>
-        <div class="w-full h-64 rounded-xl overflow-hidden shadow-md mb-8">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9892550190117!2d-75.56616098522676!3d6.265775495460596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e5595c52c7%3A0x86f3801f68740d18!2sBarrio%20Prado%20Centro%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1634567890123!5m2!1ses!2sco" 
-                class="w-full h-full border-0" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
-
-        <!-- Botón de contacto -->
-        <div class="mt-8 text-center">
-            <a href="https://wa.me/573011885152" target="_blank" class="bg-green-500 text-white py-3 px-6 rounded-lg font-bold hover:bg-green-600 transition-colors">
-                Contactar por WhatsApp
-            </a>
-        </div>
-    </div>
+<body class="bg-gray-100 p-8 text-center">
+    <h1 class="text-5xl font-bold text-blue-900 mb-4">PORTAL</h1>
+    <p class="text-2xl text-gray-600 mb-8">Coliving - Holístico</p>
+    
+    <img src="casa.jpg" alt="Fachada" class="mx-auto rounded-lg shadow-xl mb-8">
+    
+    <a href="https://wa.me/573011885152" class="bg-green-500 text-white py-4 px-8 rounded-full text-xl font-bold hover:bg-green-600">
+        Contactar por WhatsApp
+    </a>
 </body>
 </html>
