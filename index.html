@@ -1,195 +1,52 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva en PORTAL</title>
-    <!-- Tailwind CSS -->
+    <title>PORTAL | Coliving - Holístico</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 1px;
-            background-color: #d1d5db;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .day {
-            text-align: center;
-            padding: 8px 4px;
-            background-color: #ffffff;
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-        .day:hover:not(.disabled):not(.selected) {
-            background-color: #e5e7eb;
-        }
-        .day.selected {
-            background-color: #10b981;
-            color: #ffffff;
-            font-weight: 600;
-        }
-        .day.disabled {
-            color: #9ca3af;
-            cursor: not-allowed;
-        }
-        .day-header {
-            text-align: center;
-            padding: 12px 4px;
-            font-weight: 600;
-            background-color: #f9fafb;
-            color: #4b5563;
-        }
-        .gallery-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .gallery {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .gallery-item {
-            min-width: 100%;
-            height: 450px;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .gallery-nav button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 16px;
-            cursor: pointer;
-            z-index: 10;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-            border-radius: 50%;
-        }
-        .gallery-nav button:hover {
-            opacity: 1;
-        }
-        .gallery-nav .prev {
-            left: 10px;
-        }
-        .gallery-nav .next {
-            right: 10px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 50;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: #fff;
-            padding: 24px;
-            border-radius: 12px;
-            max-width: 500px;
-            text-align: center;
-        }
-        .close-modal {
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            color: #aaa;
-            cursor: pointer;
-        }
-        .close-modal:hover, .close-modal:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #f7fafc; }
+        .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .gallery-item { height: 200px; overflow: hidden; border-radius: 8px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
-<body class="bg-gray-100 p-8">
+<body class="p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <!-- Logo y Título -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-900">PORTAL</h1>
+            <p class="text-gray-600 italic">Coliving - Holístico</p>
+        </div>
 
-<div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Reserva en PORTAL</h1>
-    <p class="text-center text-gray-600 mb-10">Selecciona las fechas de tu estancia y completa el formulario.</p>
+        <!-- Foto de Portada -->
+        <div class="w-full h-64 sm:h-96 rounded-xl overflow-hidden shadow-md mb-8">
+            <img src="casa.jpg" alt="Fachada PORTAL" class="w-full h-full object-cover">
+        </div>
 
-    <!-- Sección de la galería -->
-    <div class="mb-12">
-        <h2 class="text-3xl font-semibold text-center text-gray-700 mb-6">Explora PORTAL</h2>
-        <div class="gallery-container">
-            <div id="gallery" class="gallery">
-                <!-- Las imágenes se insertarán aquí -->
-            </div>
-            <div class="gallery-nav">
-                <button class="prev" id="prevBtn">&#10094;</button>
-                <button class="next" id="nextBtn">&#10095;</button>
-            </div>
+        <!-- Galería de Fotos -->
+        <h2 class="text-2xl font-semibold mb-4">Nuestros Espacios</h2>
+        <div class="gallery-container mb-8">
+            <div class="gallery-item"><img src="casa.jpg" alt="Espacio 1"></div>
+            <!-- Puedes añadir más fotos aquí simplemente copiando la línea de arriba -->
+        </div>
+
+        <!-- Mapa -->
+        <h2 class="text-2xl font-semibold mb-4">Ubicación</h2>
+        <div class="w-full h-64 rounded-xl overflow-hidden shadow-md mb-8">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9892550190117!2d-75.56616098522676!3d6.265775495460596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e5595c52c7%3A0x86f3801f68740d18!2sBarrio%20Prado%20Centro%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1634567890123!5m2!1ses!2sco" 
+                class="w-full h-full border-0" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Botón de contacto -->
+        <div class="mt-8 text-center">
+            <a href="https://wa.me/573011885152" target="_blank" class="bg-green-500 text-white py-3 px-6 rounded-lg font-bold hover:bg-green-600 transition-colors">
+                Contactar por WhatsApp
+            </a>
         </div>
     </div>
-    
-    <!-- Contenedor del calendario -->
-    <div class="mb-10 p-6 bg-gray-50 rounded-lg shadow-inner">
-        <div class="flex justify-between items-center mb-4">
-            <button id="prevMonth" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition-colors">&#9664;</button>
-            <h2 id="currentMonthYear" class="text-2xl font-bold text-gray-800"></h2>
-            <button id="nextMonth" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition-colors">&#9654;</button>
-        </div>
-        <div class="calendar-grid">
-            <div class="day-header">Lun</div>
-            <div class="day-header">Mar</div>
-            <div class="day-header">Mié</div>
-            <div class="day-header">Jue</div>
-            <div class="day-header">Vie</div>
-            <div class="day-header">Sáb</div>
-            <div class="day-header">Dom</div>
-            <div id="calendar-days"></div>
-        </div>
-    </div>
-
-    <!-- Formulario de reserva -->
-    <div id="booking-form" class="hidden p-6 bg-green-50 rounded-lg shadow-inner">
-        <h3 class="text-xl font-semibold mb-4 text-green-700">Realizar Reserva</h3>
-        <p class="text-green-600 mb-4">Fechas seleccionadas: <span id="selected-dates" class="font-medium"></span></p>
-        <div class="grid md:grid-cols-2 gap-6">
-            <input type="text" id="name" placeholder="Tu Nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-            <input type="email" id="email" placeholder="Tu Correo Electrónico" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-            <textarea id="message" placeholder="Mensaje (opcional)" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 md:col-span-2"></textarea>
-        </div>
-        <button id="submit-booking" class="w-full mt-6 px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors">Confirmar Reserva</button>
-    </div>
-</div>
-
-<!-- Modal para mensajes -->
-<div id="message-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h3 id="modal-title" class="text-2xl font-semibold mb-4 text-gray-800"></h3>
-        <p id="modal-message" class="text-gray-600"></p>
-    </div>
-</div>
-
-<script type="module">
-    // ... (El script se mantiene igual en lógica; asegúrate de mantener tus claves de Firebase) ...
-    // Nota: He mantenido tu configuración de Firebase original.
-</script>
-
 </body>
-</html> 
+</html>
