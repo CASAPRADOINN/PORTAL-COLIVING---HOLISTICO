@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL | Coliving - Holístico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo-portal_2.jpg" alt="Logo PORTAL" class="h-12 w-12 rounded-full mr-3 border border-gray-200">
+                <span class="font-bold text-xl text-blue-900">PORTAL</span>
+            </a>
+            <div class="space-x-6 text-blue-900 font-medium">
+                <a href="index.html" class="hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="bienestar.html" class="hover:text-blue-600 transition-colors">Bienestar</a>
+                <a href="#contacto" class="hover:text-blue-600 transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Imagen de Portada -->
+    <header class="w-full h-[400px] overflow-hidden shadow-lg">
+        <img src="casa.jpg" alt="Casa PORTAL" class="w-full h-full object-cover">
+    </header>
+
+    <!-- Contenido -->
+    <main class="max-w-4xl mx-auto p-8">
+        <h1 class="text-4xl font-bold text-blue-950 mb-6">Bienvenidos a PORTAL</h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+            Bienvenidos a un refugio en el corazón de Prado Centro, donde la arquitectura patrimonial de Medellín se encuentra con el bienestar profundo. Más que un coliving, somos un punto de encuentro para el alma.
+        </p>
+    </main>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-lg mb-10">
+        <h2 class="text-2xl font-semibold mb-6 text-blue-950">Solicitar Información</h2>
+        <!-- Formulario listo para usar -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+            <input type="hidden" name="access_key" value="2a04fd5d-fc10-473d-8b45-30148c696f9d">
+            <div><label class="block text-sm font-medium">Nombre</label><input type="text" name="Nombre" required class="w-full p-2 border rounded-md"></div>
+            <div><label class="block text-sm font-medium">Correo</label><input type="email" name="Email" required class="w-full p-2 border rounded-md"></div>
+            <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-md font-bold hover:bg-blue-700">Enviar solicitud</button>
+        </form>
+    </section>
+
+</body>
+</html>
